@@ -80,7 +80,12 @@ public struct QKQuestion: Hashable {
     }
     
     public static func ==(lhs: QKQuestion, rhs: QKQuestion) -> Bool {
-        return lhs.hashValue == rhs.hashValue
+        if lhs.hashValue == rhs.hashValue &&
+	   lhs.question == rhs.question {
+		return true
+	}
+
+	return false
     }
     
 }
